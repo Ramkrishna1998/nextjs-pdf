@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types",
+      "@emotion/core",
+      "@emotion/react/types/css-prop"
+    ],
+    "jsxImportSource": "@emotion/react",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "strict": true,
+    "downlevelIteration": true,
+    "useDefineForClassFields": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "paths": {
+      "@/store": ["./src/store/index"],
+      "@/api/*": ["./src/api/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/styles": ["./styles/index.css"],
+      "@/providers": ["./src/providers"],
+      "@/config": ["./src/config/index"],
+      "@library/*": ["./src/library/*"],
+      "@/layout": ["./src/layout/index"],
+      "@/hooks": ["./src/hooks/index"],
+      "@/src/*": ["./src/*"],
+      "@/theme": ["./styles/theme/index"],
+      "@/utils": ["./src/utils/index"],
+      "@/server": ["./server/index"]
+    },
+    "incremental": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+    /* ts-node overrides if you need ts-node to use different compiler options than tsc.  This is usually not necessary */
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "knexfile.ts"],
+  "exclude": ["node_modules"]
+}

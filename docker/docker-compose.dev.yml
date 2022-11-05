@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: ${DB_CONTAINER_NAME}
+    restart: unless-stopped
+    env_file: ../.env.development
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    ports:
+      - target: 3306
+        published: ${DB_PORT}
+
+  redis:
+    image: redis:latest
+    container_name: visaoswal-redis
+    env_file: ../.env.development
+    restart: unless-stopped
+    ports:
+      - target: 6379
+        published: ${REDIS_PORT}
+    volumes:
+      - redis-data:/data
+
+  redis-commander:
+    container_name: visaoswal-redis-commander
+    hostname: redis-commander
+    restart: always
+    image: rediscommander/redis-commander:latest
+    environment:
+      - REDIS_HOST=redis
+    ports:
+      - target: 8081
+        published: 8082
+    depends_on:
+      - redis
+
+volumes:
+  redis-data:

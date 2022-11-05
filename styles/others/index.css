@@ -1,0 +1,19 @@
+/**
+ *
+*The Third party Library Styles
+ *
+ ** Export all styles related to other library in this file
+ */
+
+/* @import './font.css'; */
+@import "./app.css";
+@import "./sidebar.css";
+@import "./spinner.css";
+@import "pdfjs-dist/web/pdf_viewer.css";
+
+@import "./AreaHighlight.css";
+@import "./MouseSelection.css";
+@import "./pdf_viewer.css";
+@import "./PdfHighlighter.css";
+@import "./Tip.css";
+@import "./Highlight.css";
